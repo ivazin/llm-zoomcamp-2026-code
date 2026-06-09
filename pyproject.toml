@@ -1,0 +1,31 @@
+[project]
+name = "llm-zoomcamp-2026-code"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gitsource>=0.0.5",
+    "jupyter>=1.1.1",
+    "minsearch>=0.1.0",
+    "openai>=2.41.0",
+    "python-dotenv>=1.2.2",
+    "requests>=2.34.2",
+    "sqlitesearch>=0.0.5",
+    "toyaikit>=0.0.11",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=2.1.0",
+    "pre-commit>=4.6.0",
+    "ruff>=0.15.17",
+]
+
+[tool.ruff]
+# Включаем стандартные проверки качества (Pyflakes + pycodestyle)
+select = ["E", "F", "W"]
+
+[tool.ruff.lint.per-file-ignores]
+# Игнорируем E402, F811, E501 и W291 для Jupyter ноутбуков
+"*.ipynb" = ["E402", "F811", "E501", "W291"]
